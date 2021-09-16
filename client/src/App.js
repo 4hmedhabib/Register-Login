@@ -1,7 +1,12 @@
 import './App.css';
+import { Layout, Register } from './components';
 
 function App() {
-	return <div className="App">body</div>;
+	return (
+		<Layout className="">
+			<Register />
+		</Layout>
+	);
 }
 
 export default App;
