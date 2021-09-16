@@ -20,6 +20,7 @@ const Register = () => {
 							type="text"
 							name="firstname"
 							id="firstname"
+							required
 							placeholder="Firstname"
 						/>
 					</div>
@@ -29,17 +30,19 @@ const Register = () => {
 							type="text"
 							name="lastname"
 							id="lastname"
+							required
 							placeholder="Lastname"
 						/>
 					</div>
 				</div>
-				<div className="d-flex justify-content-lg-between align-items-center">
+				<div className="d-flex justify-content-between align-items-center">
 					<div className="mb-3">
 						<input
 							className={classes.phone__input}
 							type="text"
 							name="phone"
 							id="phone"
+							required
 							placeholder="Phone Number"
 						/>
 					</div>
@@ -49,6 +52,7 @@ const Register = () => {
 							type="text"
 							name="country"
 							id="country"
+							required
 							placeholder="Your Country"
 						/>
 					</div>
@@ -59,16 +63,18 @@ const Register = () => {
 						type="text"
 						name="email"
 						id="email"
+						required
 						placeholder="Email Address"
 					/>
 				</div>
-				<div className="d-flex justify-content-between align-items-center">
+				<div className="d-flex justify-content-between">
 					<div className="mb-3">
 						<input
 							className={classes.password__input}
 							type="password"
 							name="password"
 							id="password"
+							required
 							placeholder="Password"
 						/>
 					</div>
@@ -78,19 +84,35 @@ const Register = () => {
 							type="password"
 							name="confirm"
 							id="confirm"
+							required
 							placeholder="Confirm Password"
 						/>
 					</div>
 				</div>
-				<div className="d-flex">
+				<div className="d-flex mb-3">
 					<textarea
-						className={classes.terms__input}
-						name="terms"
-						id="terms"
+						className={classes.about__input}
+						name="about"
+						id="about"
 						cols="30"
 						rows="3"
+						required
 						placeholder="Tell us about yourself"
 					/>
+				</div>
+				<div className="d-flex align-items-center mb-3">
+					<input className={classes.terms__input} type="checkbox" name="terms" id="terms" required />
+					<label htmlFor="terms" className={classes.terms__label}>
+						I agree to Suare's <a href="/#">Cookie</a>and <a href="/#">Privacy Policy</a>
+					</label>
+				</div>
+				<div className="d-flex justify-content-between">
+					<button className={classes.login__btn} type="button">
+						Login
+					</button>
+					<button className={classes.submit__btn} type="submit">
+						Get Started
+					</button>
 				</div>
 			</form>
 		</section>

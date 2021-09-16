@@ -46,7 +46,7 @@ form .register__signup {
     align-items: center;
 }
 
-form .register__terms {
+form .register__about {
     max-width: 500px;
     border-radius: 24px;
     box-sizing: border-box;
@@ -76,7 +76,7 @@ input {
     width: 100%;
 }
 
-.terms__input {
+.about__input {
     width: 100%;
     border: 1px solid #E2E2EA;
     border-radius: 24px;
@@ -85,4 +85,53 @@ input {
     padding: 16px;
     font-size: 14px;
     font-family: 'Roboto', sans-serif;
+}
+
+.terms__input {
+    margin-right: 12px;
+    width: 16px;
+    height: 16px;
+    border-radius: 5px;
+}
+
+.terms__label {
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    color: #696974;
+}
+
+a {
+    text-decoration: none;
+}
+
+.login__btn {
+    width: 150px;
+    height: 48px;
+    border-radius: 24px;
+    background: #f1f1f5;
+    outline: none;
+    border: none;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.submit__btn {
+    width: 340px;
+    height: 48px;
+    background: #007fff;
+    color: white;
+    border-radius: 24px;
+    border: none;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+input:active,
+input:focus,
+textarea:focus {
+    border: 1px solid #007fff;
+    color: #2c2c2c;
 }
