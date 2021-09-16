@@ -1,0 +1,88 @@
+section.section__register {
+    margin-top: 30px;
+}
+
+.title h1 {
+    font-size: 46px;
+    letter-spacing: 1px;
+    color: #44444F;
+    font-weight: 400;
+}
+
+.title p {
+    font-size: 12px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    color: #92929d;
+    letter-spacing: 0.1px;
+}
+
+.register__form {
+    width: 560px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 3px -5px 40px rgba(205, 205, 212, 0.1);
+}
+
+form .register__login {
+    width: 150px;
+    height: 48px;
+    border-radius: 24px;
+    background: #f1f1f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form .register__signup {
+    width: 340px;
+    height: 48px;
+    border-radius: 24px;
+    background: #007fff;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form .register__terms {
+    max-width: 500px;
+    border-radius: 24px;
+    box-sizing: border-box;
+    border: 1px solid #e2e2ea;
+}
+
+input {
+    outline: none;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.firstname__input,
+.lastname__input,
+.phone__input,
+.country__input,
+.email__input,
+.password__input {
+    width: 240px;
+    border: 1px solid #E2E2EA;
+    text-decoration: none;
+    padding: 12px 14px;
+    border-radius: 24px;
+}
+
+.email__input {
+    width: 100%;
+}
+
+.terms__input {
+    width: 100%;
+    border: 1px solid #E2E2EA;
+    border-radius: 24px;
+    box-sizing: border-box;
+    outline: none;
+    padding: 16px;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+}
