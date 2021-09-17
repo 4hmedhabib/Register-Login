@@ -2,7 +2,30 @@ import { useState } from 'react';
 import classes from './Register.module.css';
 
 const Register = () => {
-	const [ name, setName ] = useState();
+	const [ firstname, setFirstname ] = useState('');
+	const [ lastname, setLastname ] = useState('');
+	const [ phone, setPhone ] = useState('');
+	const [ country, setCountry ] = useState('');
+	const [ email, setEmail ] = useState('');
+	const [ password, setPassword ] = useState('');
+	const [ confirmPass, setConfirmPass ] = useState('');
+	const [ about, setAbout ] = useState('');
+	const [ agree, setAgree ] = useState('');
+
+	const registerFormHandler = (e) => {
+		e.preventDefault();
+		const data = {
+			name: firstname + ' ' + lastname,
+			phone,
+			country,
+			email,
+			password: password + ' === ' + confirmPass,
+			about,
+			agree
+		};
+		console.log(data);
+	};
+
 	return (
 		<section
 			className={
@@ -14,7 +37,7 @@ const Register = () => {
 				<h1>Register</h1>
 				<p>Let's Sign up first for enter into Squarr Website. Uh She Up!</p>
 			</div>
-			<form className={classes.register__form + ' col-10 offset-1'}>
+			<form className={classes.register__form + ' col-10 offset-1'} onSubmit={registerFormHandler} noValidate>
 				<div className="d-flex flex-md-row flex-column justify-content-between">
 					<div className="mb-3">
 						<input
@@ -24,6 +47,8 @@ const Register = () => {
 							id="firstname"
 							required
 							placeholder="Firstname"
+							value={firstname}
+							onChange={(e) => setFirstname(e.target.value)}
 						/>
 					</div>
 					<div className="mb-3">
@@ -34,6 +59,8 @@ const Register = () => {
 							id="lastname"
 							required
 							placeholder="Lastname"
+							value={lastname}
+							onChange={(e) => setLastname(e.target.value)}
 						/>
 					</div>
 				</div>
@@ -46,6 +73,8 @@ const Register = () => {
 							id="phone"
 							required
 							placeholder="Phone Number"
+							value={phone}
+							onChange={(e) => setPhone(e.target.value)}
 						/>
 					</div>
 					<div className="mb-3">
@@ -56,6 +85,8 @@ const Register = () => {
 							id="country"
 							required
 							placeholder="Your Country"
+							value={country}
+							onChange={(e) => setCountry(e.target.value)}
 						/>
 					</div>
 				</div>
@@ -67,6 +98,8 @@ const Register = () => {
 						id="email"
 						required
 						placeholder="Email Address"
+						value={email}
+						onChange={(e) => setEmail(e.target.value)}
 					/>
 				</div>
 				<div className="d-flex flex-md-row flex-column justify-content-between ">
@@ -78,6 +111,8 @@ const Register = () => {
 							id="password"
 							required
 							placeholder="Password"
+							value={password}
+							onChange={(e) => setPassword(e.target.value)}
 						/>
 					</div>
 					<div className="mb-3">
@@ -88,6 +123,8 @@ const Register = () => {
 							id="confirm"
 							required
 							placeholder="Confirm Password"
+							value={confirmPass}
+							onChange={(e) => setConfirmPass(e.target.value)}
 						/>
 					</div>
 				</div>
@@ -100,10 +137,20 @@ const Register = () => {
 						rows="3"
 						required
 						placeholder="Tell us about yourself"
+						value={about}
+						onChange={(e) => setAbout(e.target.value)}
 					/>
 				</div>
 				<div className="d-flex align-items-center mb-3">
-					<input className={classes.terms__input} type="checkbox" name="terms" id="terms" required />
+					<input
+						className={classes.terms__input}
+						type="checkbox"
+						name="terms"
+						id="terms"
+						value={agree}
+						onChange={(e) => setAgree(e.target.value)}
+						required
+					/>
 					<label htmlFor="terms" className={classes.terms__label}>
 						I agree to Suare's <a href="/#">Cookie</a>and <a href="/#">Privacy Policy</a>
 					</label>
