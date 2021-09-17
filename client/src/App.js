@@ -1,10 +1,11 @@
 import './App.css';
-import { Layout, Register } from './components';
+import { Layout, Login, Register } from './components';
 
 function App() {
 	return (
 		<Layout className="">
-			<Register />
+			{/* <Register /> */}
+			<Login />
 		</Layout>
 	);
 }
