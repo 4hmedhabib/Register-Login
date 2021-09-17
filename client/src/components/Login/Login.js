@@ -12,7 +12,15 @@ const Login = () => {
 			email,
 			password
 		};
-		Axios.post('http://localhost:3001/api/v1/login', data);
+		Axios.post('http://localhost:3001/api/v1/login', data)
+			.then((response) => {
+				console.log(response.data);
+			})
+			.catch((err) => {
+				console.log(err);
+			});
+		setEmail('');
+		setPassword('');
 	};
 
 	return (
