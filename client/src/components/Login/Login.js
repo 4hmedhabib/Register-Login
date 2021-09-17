@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import classes from './Login.module.css';
+import Axios from 'axios';
 
 const Login = () => {
 	const [ email, setEmail ] = useState('');
@@ -7,7 +8,11 @@ const Login = () => {
 
 	const formSubmitHandler = (e) => {
 		e.preventDefault();
-		console.log({ email: email, password: password });
+		const data = {
+			email,
+			password
+		};
+		Axios.post('http://localhost:3001/api/v1/login', data);
 	};
 
 	return (
