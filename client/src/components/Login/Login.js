@@ -1,11 +1,13 @@
+import classes from './Login.module.css';
+
 const Login = () => {
 	return (
-		<section className="login__section">
-			<div className="login__title">
+		<section className={classes.login__section + ' col-md-6 offset-md-3 col-10 offset-1'}>
+			<div className={classes.login__title}>
 				<h1>Sign In</h1>
 				<p>Just sign in if you have an account in here. Enjoy our Website.</p>
 			</div>
-			<div className="login__form">
+			<div className={classes.login__form}>
 				<form>
 					<div className="mb-3">
 						<input type="text" className="login__email" name="email" placeholder="Your email" />
