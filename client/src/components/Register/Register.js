@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Axios from 'axios';
 import classes from './Register.module.css';
 
 const Register = () => {
@@ -12,18 +13,22 @@ const Register = () => {
 	const [ about, setAbout ] = useState('');
 	const [ agree, setAgree ] = useState('');
 
-	const registerFormHandler = (e) => {
+	const registerFormHandler = async (e) => {
 		e.preventDefault();
+
 		const data = {
-			name: firstname + ' ' + lastname,
+			firstname,
+			lastname,
 			phone,
 			country,
 			email,
-			password: password + ' === ' + confirmPass,
+			password,
+			confirmPass,
 			about,
 			agree
 		};
-		console.log(data);
+
+		Axios.post('http://localhost:3001/api/v1/register', data);
 	};
 
 	return (
@@ -148,7 +153,7 @@ const Register = () => {
 						name="terms"
 						id="terms"
 						value={agree}
-						onChange={(e) => setAgree(e.target.value)}
+						onChange={(e) => setAgree(e.target.checked)}
 						required
 					/>
 					<label htmlFor="terms" className={classes.terms__label}>
