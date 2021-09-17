@@ -18,11 +18,13 @@ section.section__register {
 }
 
 .register__form {
-    width: 560px;
+    max-width: 560px;
+    width: calc(100%);
     background: #fff;
     padding: 30px;
     border-radius: 20px;
     box-shadow: 3px -5px 40px rgba(205, 205, 212, 0.1);
+
 }
 
 form .register__login {
@@ -65,7 +67,8 @@ input {
 .country__input,
 .email__input,
 .password__input {
-    width: 240px;
+    width: 100%;
+    min-width: 240px;
     border: 1px solid #E2E2EA;
     text-decoration: none;
     padding: 12px 14px;
@@ -73,7 +76,8 @@ input {
 }
 
 .email__input {
-    width: 100%;
+    max-width: 100%;
+    width: auto;
 }
 
 .about__input {
@@ -127,6 +131,7 @@ a {
     font-size: 14px;
     font-weight: 500;
     letter-spacing: 1px;
+    margin-left: 12px;
 }
 
 input:active,

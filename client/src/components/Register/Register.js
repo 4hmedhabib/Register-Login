@@ -1,19 +1,21 @@
+import { useState } from 'react';
 import classes from './Register.module.css';
 
 const Register = () => {
+	const [ name, setName ] = useState();
 	return (
 		<section
 			className={
 				classes.section__register +
-				' col-md-6 offset-md-3 col-sm-8 offset-sm-2 col-12 d-flex flex-column justify-content-center align-items-center'
+				' col-md-6 offset-md-3 col-sm-10 offset-sm-1 col-10 offset-1 d-flex flex-column justify-content-center align-items-center '
 			}
 		>
 			<div className={classes.title + ' text-center'}>
 				<h1>Register</h1>
 				<p>Let's Sign up first for enter into Squarr Website. Uh She Up!</p>
 			</div>
-			<form className={classes.register__form}>
-				<div className="d-flex justify-content-between align-items-center">
+			<form className={classes.register__form + ' col-10 offset-1'}>
+				<div className="d-flex flex-md-row flex-column justify-content-between">
 					<div className="mb-3">
 						<input
 							className={classes.firstname__input}
@@ -35,7 +37,7 @@ const Register = () => {
 						/>
 					</div>
 				</div>
-				<div className="d-flex justify-content-between align-items-center">
+				<div className="d-flex flex-md-row flex-column justify-content-between ">
 					<div className="mb-3">
 						<input
 							className={classes.phone__input}
@@ -67,7 +69,7 @@ const Register = () => {
 						placeholder="Email Address"
 					/>
 				</div>
-				<div className="d-flex justify-content-between">
+				<div className="d-flex flex-md-row flex-column justify-content-between ">
 					<div className="mb-3">
 						<input
 							className={classes.password__input}
