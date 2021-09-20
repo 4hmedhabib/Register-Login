@@ -1,26 +1,47 @@
 import { useState } from 'react';
 import classes from './Login.module.css';
 import Axios from 'axios';
+import { useInput } from '../../hooks';
 
 const Login = () => {
-	const [ email, setEmail ] = useState('');
-	const [ password, setPassword ] = useState('');
+	const {
+		value: enteredEmail,
+		inputChangeHandler: emailChangeHandler,
+		inputBlurHandler: emailBlurHandler,
+		reset: emailReset
+	} = useInput();
+
+	const {
+		value: enteredPassword,
+		inputChangeHandler: passwordChangeHandler,
+		inputBlurHandler: passwordBlurHandler,
+		reset: passwordReset
+	} = useInput();
+
+	const { isRemember: enteredRemember, rememberHandler: rememberChangeHandler } = useInput();
+
+	console.log(enteredRemember);
 
 	const formSubmitHandler = (e) => {
 		e.preventDefault();
-		const data = {
-			email,
-			password
-		};
-		Axios.post('http://localhost:3001/api/v1/login', data)
-			.then((response) => {
-				console.log(response.data);
-			})
-			.catch((err) => {
-				console.log(err);
-			});
-		setEmail('');
-		setPassword('');
+		// const data = {
+		// 	email,
+		// 	password
+		// };
+		// Axios.post('http://localhost:3001/api/v1/login', data)
+		// 	.then((response) => {
+		// 		console.log(response.data);
+		// 	})
+		// 	.catch((err) => {
+		// 		console.log(err);
+		// 	});
+		console.log({
+			email: enteredEmail,
+			password: enteredPassword,
+			remamber: enteredRemember
+		});
+		emailReset();
+		passwordReset();
 	};
 
 	return (
@@ -37,8 +58,9 @@ const Login = () => {
 							className={classes.login__input}
 							name="email"
 							placeholder="Your email"
-							value={email}
-							onChange={(e) => setEmail(e.target.value)}
+							value={enteredEmail}
+							onChange={emailChangeHandler}
+							onBlur={emailBlurHandler}
 						/>
 					</div>
 					<div className="mb-3">
@@ -47,13 +69,21 @@ const Login = () => {
 							className={classes.login__input + ' ' + classes.login__password}
 							name="password"
 							placeholder="Enter password"
-							value={password}
-							onChange={(e) => setPassword(e.target.value)}
+							value={enteredPassword}
+							onChange={passwordChangeHandler}
+							onBlur={passwordBlurHandler}
 						/>
 					</div>
 					<div className="mb-3 d-flex justify-content-between px-2">
 						<div className="d-flex justify-content-center align-items-center">
-							<input className={'me-2'} type="checkbox" name="remember" id="remember" />
+							<input
+								className={'me-2'}
+								type="checkbox"
+								name="remember"
+								id="remember"
+								value={enteredRemember}
+								onChange={rememberChangeHandler}
+							/>
 							<label htmlFor="remember">Remember Me</label>
 						</div>
 						<a href="/#">Forgot Password</a>
